@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原神體力計算</title>
+    <!-- CSS -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function Calculate() {
+            let sub160 = 160 - document.getElementById("resin").value;
+            let total_min = (sub160 - 1) * 8;
+            let total_hr = 0;
+            while (total_min >= 60) {
+                total_min -= 60;
+                total_hr += 1;
+            }
+
+
+            let time = new Date();
+            let mo = time.getMonth(),
+                dnum = "今天",
+                hr = time.getHours() + total_hr,
+                min = time.getMinutes() + total_min;
+            while (min >= 60) {
+                min -= 60;
+                hr += 1;
+            }
+            while (hr >= 24) {
+                hr -= 24;
+                dnum = "明天";
+            }
+
+
+            document.getElementById('output1').innerHTML = `下面可以開BGM喔`;
+            document.getElementById('output2').innerHTML = `最快【${dnum} ${hr}時 ${min}分】全滿`;
+
+
+
+
+
+        }
+        function startTime() {
+            Calculate();
+            window.setInterval("Calculate()", 1)
+        }
+
+    </script>
+</head>
+
+
+<body onload=" startTime()">
+    <section>
+        <div class="l-form">
+            <form action="" class="form">
+                <h1 class="form_title">原神體力計算機</h1>
+
+                <div class="form_div">
+                    <input type="text" class="form_input" id="resin" placeholder=" ">
+                    <label for="" class="form_label">目前的體力值</label>
+                </div>
+                <div class="form_div">
+                    <div name="output1" id="output1"></div>
+                    <div name="output2" id="output2"></div>
+                </div>
+                <!-- <audio autoplay controls loop>
+                    <source src="https://raw.githubusercontent.com/L1Ho/resin.github.io/master/bgm/ayaka.mp3"
+                        type="audio/mpeg">
+                </audio> -->
+                <!-- ▂▂▂▂▂▂▂▂aduioplayer▂▂▂▂▂▂▂ -->
+                <div id="app-cover">
+                    <div id="bg-artwork"></div>
+                    <div id="bg-layer"></div>
+                    <div id="player">
+                        <div id="player-track">
+                            <div id="album-name"></div>
+                            <div id="track-name"></div>
+                            <div id="track-time">
+                                <div id="current-time"></div>
+                                <div id="track-length"></div>
+                            </div>
+                            <div id="s-area">
+                                <div id="ins-time"></div>
+                                <div id="s-hover"></div>
+                                <div id="seek-bar"></div>
+                            </div>
+                        </div>
+                        <div id="player-content">
+                            <div id="album-art">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
+                                    class="active" id="_1">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg"
+                                    id="_2">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg"
+                                    id="_3">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg"
+                                    id="_4">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg"
+                                    id="_5">
+                                <div id="buffer-box">Buffering ...</div>
+                            </div>
+                            <div id="player-controls">
+                                <div class="control">
+                                    <div class="button" id="play-previous">
+                                        <i class="fas fa-backward"></i>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <div class="button" id="play-pause-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <div class="button" id="play-next">
+                                        <i class="fas fa-forward"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ▂▂▂▂▂▂▂▂aduioplayer_END▂▂▂▂▂▂▂ -->
+
+
+            </form>
+        </div>
+
+        <div class="set">
+            <div><img src="img/leaves1.png" alt=""></div>
+            <div><img src="img/leaves2.png" alt=""></div>
+            <div><img src="img/leaves3.png" alt=""></div>
+            <div><img src="img/leaves4.png" alt=""></div>
+            <div><img src="img/leaves1.png" alt=""></div>
+            <div><img src="img/leaves2.png" alt=""></div>
+            <div><img src="img/leaves3.png" alt=""></div>
+            <div><img src="img/leaves4.png" alt=""></div>
+        </div>
+        <div class="set set2">
+            <div><img src="img/leaves1.png" alt=""></div>
+            <div><img src="img/leaves2.png" alt=""></div>
+            <div><img src="img/leaves3.png" alt=""></div>
+            <div><img src="img/leaves4.png" alt=""></div>
+            <div><img src="img/leaves1.png" alt=""></div>
+            <div><img src="img/leaves2.png" alt=""></div>
+            <div><img src="img/leaves3.png" alt=""></div>
+            <div><img src="img/leaves4.png" alt=""></div>
+        </div>
+        <div class="set set3">
+            <div><img src="img/leaves1.png" alt=""></div>
+            <div><img src="img/leaves2.png" alt=""></div>
+            <div><img src="img/leaves3.png" alt=""></div>
+            <div><img src="img/leaves4.png" alt=""></div>
+            <div><img src="img/leaves1.png" alt=""></div>
+            <div><img src="img/leaves2.png" alt=""></div>
+            <div><img src="img/leaves3.png" alt=""></div>
+            <div><img src="img/leaves4.png" alt=""></div>
+        </div>
+    </section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
